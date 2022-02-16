@@ -10,7 +10,7 @@ import Tabel from './tabela.js';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import CountDown from 'react-native-countdown-component';
 
-function Portofel({ navigation }) {
+function PortofelAbonament({ navigation }) {
 
   const abonament2 = <TouchableOpacity style={{ backgroundColor: colors.darkgray }}onPress={()=>{navigation.navigate("PortofelScreen")}}>
       <Text style={styles.text}>
@@ -115,7 +115,7 @@ items={[
 
 )
 }
-export default Portofel
+export default PortofelAbonament
 
 const styles = StyleSheet.create({
 downarrow:{
