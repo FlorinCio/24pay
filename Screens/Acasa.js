@@ -26,7 +26,7 @@ return (
 <View style={{alignItems:'center', justifyContent:'center',flex:1, backgroundColor: colors.darkgray}}>
 <StatusBar style='light'  currentHeight ='50' backgroundColor={colors.black} />
 
-<TouchableOpacity style={styles.button} onPress={()=>navigation.navigate('PortofelAbonament')}>
+<TouchableOpacity style={styles.button} onPress={()=>navigation.navigate('TransportPublic')}>
   <Image source={infoticket} style={styles.image}/>
   <Text style={styles.text} >Transport public</Text>
   <Image source={forward} style={styles.forward}/>
