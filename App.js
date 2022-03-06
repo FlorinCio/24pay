@@ -151,12 +151,15 @@ const [fontsLoaded] = useFonts({
 return (
   <SafeAreaProvider>
   <NavigationContainer ref={navigationRef}>
-  <View style={{ backgroundColor: colors.black, alignItems:'center', flexDirection:'row', justifyContent:'center'
+  <View style={{ backgroundColor: colors.black, flexDirection:'row',
  }}>
- {shouldShowBackButton ? <Button title="Back" onPress={() => navigationRef.goBack()} color='#ff0000' style={{position: 'absolute', marginTop:0}}/> : null}
-  <Image source={pay24} style={{height: 50, width:70, marginTop: 30, paddingTop:1,marginRight:10, marginBottom:5}} resizeMode={'contain'}/>
-  <Text style={{color:colors.white, alignItems:'center', justifyContent:'center', marginTop:25, marginBottom:5 }}> susținut de </Text>
-  <Image source={bt} style={{height: 30, width:40, marginTop: 30, paddingTop:5,marginLeft:5,  marginBottom:5}} resizeMode={'contain'}/>
+ {shouldShowBackButton ? <TouchableOpacity title="Back" onPress={() => navigationRef.goBack()} color='#ff0000'
+ style={{flex:1, position:'absolute', marginLeft:20, marginTop: 40, height:20, width:20, backgroundColor:colors.red }}>
+ <Text>Back</Text>
+ </TouchableOpacity> : null}
+  <Image source={pay24} style={{height: 50, width:70, marginTop: 30, paddingTop:1,marginRight:10, marginBottom:5 , marginLeft:120}} resizeMode={'contain'}/>
+  <Text style={{color:colors.white, alignItems:'center', justifyContent:'center', marginTop:45, marginBottom:5 }}> susținut de </Text>
+  <Image source={bt} style={{height: 30, width:40, marginTop: 40, paddingTop:5,marginLeft:5,  marginBottom:5}} resizeMode={'contain'}/>
   </View>
   <Stack.Navigator  screenOptions={({ route, navigation }) => ({
     headerShown: false,
