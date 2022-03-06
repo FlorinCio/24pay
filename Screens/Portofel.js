@@ -10,12 +10,14 @@ import Tabel from './tabela.js';
 import CountDown from 'react-native-countdown-component';
 
 function Portofel({ navigation }) {
-
+const start = Date.now()
+let date= start+25200000-start
+console.log(start-start+100000 )
   const abonament2 = <TouchableOpacity style={{marginLeft: -10, marginTop: -5}} onPress={()=>navigation.navigate('PortofelQR', { fromScreen: 'Portofel' })}>
       <Text style={styles.text}>
         Studenti 30 zile zona 1 - rămas
         <CountDown
-        until={1080000}
+        until={date}
         onFinish={() => alert('Finished')}
         digitStyle={{ backgroundColor: 'transparent', marginRight:-5,width:25 ,height:30}}
         digitTxtStyle={{color: colors.textgray, marginTop:18, marginRight:5}}

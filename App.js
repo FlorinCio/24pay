@@ -32,7 +32,8 @@ import selectedistoric from './Images/drawable-xhdpi/tab_item_4_selected.png';
 import settings from './Images/drawable-xhdpi/tab_item_3.png';
 import selectedsettings from './Images/drawable-xhdpi/tab_item_3_pressed.png';
 import bt from './Images/drawable-xxhdpi/bt_logo2.png';
-import pay24 from './Images/drawable-xxhdpi/toolbar_logo.png'
+import pay24 from './Images/drawable-xxhdpi/toolbar_logo.png';
+import back_arrow from './Images/drawable-xxxhdpi/back_arrow_white.png';
 
 const LogoTab = createMaterialTopTabNavigator();
 const Tab = createMaterialTopTabNavigator();
@@ -154,8 +155,8 @@ return (
   <View style={{ backgroundColor: colors.black, flexDirection:'row',
  }}>
  {shouldShowBackButton ? <TouchableOpacity title="Back" onPress={() => navigationRef.goBack()} color='#ff0000'
- style={{flex:1, position:'absolute', marginLeft:20, marginTop: 40, height:20, width:20, backgroundColor:colors.red }}>
- <Text>Back</Text>
+ style={{flex:1, position:'absolute', marginLeft:20, marginTop: 40, height:25, width:25, backgroundColor:colors.black }}>
+<Image source={back_arrow} style={{height: 23, width:20, marginTop: 3 }} resizeMode={'contain'}/>
  </TouchableOpacity> : null}
   <Image source={pay24} style={{height: 50, width:70, marginTop: 30, paddingTop:1,marginRight:10, marginBottom:5 , marginLeft:120}} resizeMode={'contain'}/>
   <Text style={{color:colors.white, alignItems:'center', justifyContent:'center', marginTop:45, marginBottom:5 }}> susținut de </Text>

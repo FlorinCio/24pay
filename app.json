@@ -22,8 +22,9 @@
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#FFFFFF"
-      }
+        "backgroundColor": "#80909f"
+      },
+      "package": "com.florinciobanu940.TabNavigation"
     },
     "web": {
       "favicon": "./assets/favicon.png"
