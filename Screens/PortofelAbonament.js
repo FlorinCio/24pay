@@ -7,15 +7,12 @@ import arrrowUpYellow from '../Images/drawable-xhdpi/up_arrow_yellow.png';
 import { colors } from '../Themes/Colors';
 import forward from '../Images/drawable-xxhdpi/forward_yellow_arrow.png';
 import Tabel from './tabela.js';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 import CountDown from 'react-native-countdown-component';
 
 function Portofel({ navigation }) {
 
-// const start = Date.now()
-// let date= start+25200000-start
-// console.log(start-start+100000 )
-
-  const abonament2 = <TouchableOpacity style={{marginLeft: -10, marginTop: -5}} onPress={()=>navigation.navigate('PortofelQR', { fromScreen: 'Portofel' })}>
+  const abonament2 = <TouchableOpacity style={{ backgroundColor: colors.darkgray }}onPress={()=>{navigation.navigate("PortofelScreen")}}>
       <Text style={styles.text}>
         Studenti 30 zile zona 1 - rămas
         <CountDown
@@ -29,7 +26,7 @@ function Portofel({ navigation }) {
         />
         <Text>d</Text>
         <CountDown
-        until={1080000}
+        until={100}
         onFinish={() => alert('Finished')}
         digitStyle={{backgroundColor: 'transparent',  flexDirection:'row', marginRight:-7, width:25 ,height:30}}
         digitTxtStyle={{color: colors.textgray ,marginTop:18, marginRight:7}}
@@ -54,12 +51,12 @@ function Portofel({ navigation }) {
   </TouchableOpacity>
 
   const abonament3=
-      <TouchableOpacity style={{ backgroundColor: colors.darkgray, marginLeft:-10}} onPress={()=> navigation.navigate('PortofelQR')}>
+      <TouchableOpacity style={{ backgroundColor: colors.darkgray, marginLeft:-10}} onPress={()=> navigation.navigate('PortofelAbonament')}>
         <Tabel />
       </TouchableOpacity>
 
 
-const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(false);
 const [value, setValue] = useState(null);
 const [selectedValue, setSelectedValue] = useState("java");
 

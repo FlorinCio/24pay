@@ -19,6 +19,7 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import { colors } from './Themes/Colors';
 import { useFonts } from 'expo-font';
+import { Badge } from 'react-native-elements';
 
 /* Icons */
 import home from './Images/drawable-xhdpi/teb_item_1_unselected.png';
@@ -88,7 +89,13 @@ function HomeTabs() {
                  )
                    case 'Portofel':
                    return(
+                     <View>
                      <Image source={focused ? selectedwallet : wallet} style={{height: 23, width:23, marginTop: 0, paddingTop:5}}/>
+                     <Badge value={1}
+                         containerStyle={{ position: 'absolute', top: -8, right: -10}}
+                         badgeStyle={{backgroundColor: colors.red, borderColor: colors.redBadge}}
+                       />
+                     </View>
                 )
                 case 'Mesaje':
                 return(
