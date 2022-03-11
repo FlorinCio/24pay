@@ -1,10 +1,17 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Button, TouchableOpacity, Image } from 'react-native';
+import { StyleSheet, Text, View, Button, TouchableOpacity, Image, RefreshControl } from 'react-native';
 import { colors } from '../Themes/Colors';
 import QRCode from "react-qr-code";
+import CountDown from 'react-native-countdown-component';
+
+
 
 function PortofelQR() {
+  const [time, setTime] = useState(25);
+  const reset = () => {
+    setTime(25);
+  }
   return (
   <View style={{ flex:1,backgroundColor: colors.darkgray}}>
       <View style={{borderBottomWidth:1, borderBottomColor:colors.whitetext}}>
@@ -25,8 +32,25 @@ function PortofelQR() {
       <QRCode value="@C3ef26879-b704-4438-b467-85180156d778" size='350' bgColor={colors.whitetext} level='H' style={styles.qr} fgColor={colors.black}/>
     </View>
     <View style={styles.underQR}>
-      <Text style={styles.textunderQR}>Cod control valabil 17 seconds</Text>
-      <Text style={styles.textunderQR}>Ticked valid till - zile: 29 , ore:23 , min:16 , sec:27</Text>
+      <Text style={styles.textunderQR}>Cod control valabil:
+        <CountDown
+        until={time}
+        onFinish={reset}
+        digitStyle={{backgroundColor: 'transparent',  flexDirection:'row', marginRight:-9, width:25 ,height:30}}
+        digitTxtStyle={{color: colors.textgray, marginTop:18, marginRight:9}}
+        timeToShow={['S']}
+        timeLabels={{s:''}}
+        size={12}
+        /> seconds</Text>
+      <Text style={styles.textunderQR}>Ticked valid till - zile: 29 , ore:23 , min:16 , sec:
+        <CountDown
+        until={15}
+        digitStyle={{backgroundColor: 'transparent',  flexDirection:'row', marginRight:-9, width:25 ,height:30}}
+        digitTxtStyle={{color: colors.textgray, marginTop:18, marginRight:9}}
+        timeToShow={['S']}
+        timeLabels={{s:''}}
+        size={12}
+        /></Text>
     </View>
 </View>
   )

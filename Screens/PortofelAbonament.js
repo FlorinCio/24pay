@@ -10,13 +10,15 @@ import Tabel from './tabela.js';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import CountDown from 'react-native-countdown-component';
 
+
+
 function Portofel({ navigation }) {
 
   const abonament2 = <TouchableOpacity style={{ backgroundColor: colors.darkgray }}onPress={()=>{navigation.navigate("PortofelScreen")}}>
       <Text style={styles.text}>
         Studenti 30 zile zona 1 - rămas
         <CountDown
-        until={1080000}
+        until={180}
         onFinish={() => alert('Finished')}
         digitStyle={{ backgroundColor: 'transparent', marginRight:-5,width:25 ,height:30}}
         digitTxtStyle={{color: colors.textgray, marginTop:18, marginRight:5}}
@@ -26,7 +28,7 @@ function Portofel({ navigation }) {
         />
         <Text>d</Text>
         <CountDown
-        until={100}
+        until={180}
         onFinish={() => alert('Finished')}
         digitStyle={{backgroundColor: 'transparent',  flexDirection:'row', marginRight:-7, width:25 ,height:30}}
         digitTxtStyle={{color: colors.textgray ,marginTop:18, marginRight:7}}
@@ -35,15 +37,18 @@ function Portofel({ navigation }) {
         size={12}
         />
         <Text>h</Text>
-        <CountDown
-        until={1080000}
-        onFinish={() => alert('Finished')}
-        digitStyle={{backgroundColor: 'transparent',  flexDirection:'row', marginRight:-9, width:25 ,height:30}}
-        digitTxtStyle={{color: colors.textgray, marginTop:18, marginRight:9}}
-        timeToShow={['M']}
-        timeLabels={{s:''}}
-        size={12}
-        />
+        {this.state.showCountDown === true &&
+          <CountDown
+          until={180}
+          onFinish={() => alert('Finished')}
+          digitStyle={{backgroundColor: 'transparent',  flexDirection:'row', marginRight:-9, width:25 ,height:30}}
+          digitTxtStyle={{color: colors.textgray, marginTop:18, marginRight:9}}
+          timeToShow={['S']}
+          timeLabels={{s:''}}
+          size={12}
+          />
+}
+
         <Text>min</Text>
         </Text>
 
