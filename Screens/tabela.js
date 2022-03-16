@@ -2,7 +2,7 @@ import React, { Component }  from 'react'
 import { StyleSheet, Text, View, Image } from 'react-native';
 
 import forward from '../Images/drawable-xxhdpi/forward_yellow_arrow.png';
-import { Table, Row, Rows } from 'react-native-table-component';
+import { Table, Cell, Row, Rows } from 'react-native-table-component';
 import { colors } from '../Themes/Colors';
 
 
@@ -13,8 +13,7 @@ export default class Tabel extends Component {
     const abonamentBtn = (value) => (
             <View>
               <Text style={{color:colors.tabelorange, textAlign:'center',fontSize:18,fontFamily: 'OpenSansCondBold'}}>Abonament STUDENT
-                <Text style={{color:colors.tabeltext }}>- 30 zile</Text>
-              </Text>
+              <Text style={{color:colors.tabeltext }}>- 30 zile</Text></Text>
             </View>
         );
 
@@ -47,8 +46,8 @@ export default class Tabel extends Component {
       tableHead: [abonamentBtn('1')],
       tableData: [
         [elementButton0('2'), elementButton1('3')],
-        ],
-      tableData2: [elementButton2('4')]
+        [elementButton2('4')]
+      ],
     }
   }
 
@@ -61,7 +60,6 @@ export default class Tabel extends Component {
         <Table borderStyle={{borderWidth: 3, borderColor: colors.tabelorange}}>
           <Row data={state.tableHead} style={styles.head} textStyle={styles.text}/>
           <Rows data={state.tableData} style={styles.head2} textStyle={styles.text}/>
-          <Row data={state.tableHead2} style={styles.head} textStyle={styles.text}/>
         </Table>
         <Image source={forward} style={styles.forward}/>
         </View>

@@ -7,9 +7,14 @@ import { NavigationContainer, DefaultTheme, useNavigationContainerRef, useNaviga
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import { createStackNavigator} from '@react-navigation/stack';
+import Login from './Login';
 import AcasaScreen from './Screens/Acasa';
 import PortofelScreen from './Screens/Portofel';
 import PortofelQR from './Screens/PortofelQR';
+import AutomateCafea from './Screens/AutomateCafea';
+import Taxi from './Screens/Taxi';
+import Divertisment from './Screens/Divertisment';
+import Parcare from './Screens/Parcare';
 import MesajeScreen from './Screens/Mesaje';
 import IstoricScreen from './Screens/Istoric';
 import EcranSetariScreen from './Screens/EcranSetari';
@@ -21,12 +26,14 @@ import { colors } from './Themes/Colors';
 import { useFonts } from 'expo-font';
 import { Badge } from 'react-native-elements';
 
+
 /* Icons */
 import home from './Images/drawable-xhdpi/teb_item_1_unselected.png';
 import selectedhome from './Images/drawable-xhdpi/menu_icon.png';
 import wallet from './Images/drawable-xhdpi/tab_item_wallet.png';
 import selectedwallet from './Images/drawable-xhdpi/tab_item_wallet_selected.png';
 import messages from './Images/drawable-xhdpi/tab_item_messages.png';
+import forward from './Images/drawable-xxhdpi/forward_yellow_arrow.png';
 import selectedmessages from './Images/drawable-xhdpi/tab_item_messages_selected.png';
 import istoric from './Images/drawable-xhdpi/tab_item_4.png';
 import selectedistoric from './Images/drawable-xhdpi/tab_item_4_selected.png';
@@ -40,6 +47,13 @@ const LogoTab = createMaterialTopTabNavigator();
 const Tab = createMaterialTopTabNavigator();
 const HomeStack = createNativeStackNavigator();
 const Stack = createStackNavigator();
+const routesWithoutBackButton = [
+  'Home',
+  'Portofel',
+  'Mesaje',
+  'Istoric',
+  'Setari',
+];
 
 function HomeTabs() {
   return (
@@ -118,38 +132,39 @@ function HomeTabs() {
       initialRouteName="Home"
       initialLayout={{width: Dimensions.get('window').width}}
         >
-        <HomeStack.Group options={{ title:'asd', headerStyle: {backgroundColor:'#ff0000'} }}>
         <Tab.Screen name="Acasa">
-        {() => (
-          <HomeStack.Navigator>
-            <HomeStack.Screen name="Home" component={AcasaScreen}  options={{ title:'', headerStyle: {backgroundColor:'#000000'}, headerShown: false,
-          // headerTitle: () => ( <View> <Image source={istoric} /> </View> )
-        }}
-          />
-            <HomeStack.Screen name="TransportPublic" component={TransportPublic} />
-          </HomeStack.Navigator>
-        )}
-        </Tab.Screen>
-
-        <Tab.Screen name="Portofel" component={PortofelScreen} />
-        <Tab.Screen name="Mesaje" component={MesajeScreen}  />
-        <Tab.Screen name="Istoric" component={IstoricScreen} />
-        <Tab.Screen name="Setari" component={EcranSetariScreen} />
-
-      </HomeStack.Group>
-      </Tab.Navigator>
-  );
+{() => (
+  <HomeStack.Navigator>
+    <HomeStack.Screen name="Home" component={AcasaScreen}  options={{ title:'', headerStyle: {backgroundColor:'#000000'}, headerShown: false, zIndex: 1
+  // headerTitle: () => ( <View> <Image source={istoric} /> </View> )
+}}
+  />
+    <HomeStack.Screen name="TransportPublic" component={TransportPublic}  options={{ title:'', headerStyle: {backgroundColor:'#000000'}, headerShown: false, zIndex: 1}} />
+  </HomeStack.Navigator>
+)}
+</Tab.Screen>
+  <Tab.Screen name="Portofel" component={PortofelScreen} />
+  <Tab.Screen name="Mesaje" component={MesajeScreen}  />
+  <Tab.Screen name="Istoric" component={IstoricScreen} />
+  <Tab.Screen name="Setari" component={EcranSetariScreen} />
+</Tab.Navigator>
+);
 }
 
 export default function App({navigation, route}) {
+const [token, setToken] = useState(false);
 const [shouldShowBackButton, setShouldShowBackButton] = useState(false);
 const eventListener = navigationRef.addListener('state', (e) => {
-    if (navigationRef.getCurrentRoute()["name"] == 'TransportPublic' || navigationRef.getCurrentRoute()["name"] == 'PortofelQR') {
+    if (!routesWithoutBackButton.includes(navigationRef.getCurrentRoute()["name"])) {
       setShouldShowBackButton(true);
     } else {
       setShouldShowBackButton(false);
     }
-
+    if (navigationRef.getCurrentRoute()["name"] === 'Login') {
+          setToken(false);
+        } else {
+          setToken(true);
+        }
   });
 const [fontsLoaded] = useFonts({
   'LatoBlack' : require('./assets/fonts/LatoBlack.ttf'),
@@ -159,53 +174,44 @@ const [fontsLoaded] = useFonts({
 return (
   <SafeAreaProvider>
   <NavigationContainer ref={navigationRef}>
-  <View style={{ backgroundColor: colors.black, flexDirection:'row',
- }}>
+  {token ?
+ <View style={{ backgroundColor: colors.black, flexDirection:'row'}}>
  {shouldShowBackButton ? <TouchableOpacity title="Back" onPress={() => navigationRef.goBack()} color='#ff0000'
- style={{flex:1, position:'absolute', marginLeft:20, marginTop: 40, height:25, width:25, backgroundColor:colors.black }}>
-<Image source={back_arrow} style={{height: 23, width:20, marginTop: 3 }} resizeMode={'contain'}/>
- </TouchableOpacity> : null}
-  <Image source={pay24} style={{height: 50, width:70, marginTop: 30, paddingTop:1,marginRight:10, marginBottom:5 , marginLeft:120}} resizeMode={'contain'}/>
-  <Text style={{color:colors.white, alignItems:'center', justifyContent:'center', marginTop:45, marginBottom:5 }}> susținut de </Text>
-  <Image source={bt} style={{height: 30, width:40, marginTop: 40, paddingTop:5,marginLeft:5,  marginBottom:5}} resizeMode={'contain'}/>
-  </View>
-  <Stack.Navigator  screenOptions={({ route, navigation }) => ({
+  style={{flex:1, position:'absolute', marginLeft:20, marginTop: 40, height:20, width:20, backgroundColor:colors.black }}>
+  <Image source={back_arrow} style={{height: 20, width:20, marginTop: 3 }} resizeMode={'contain'}/>
+  </TouchableOpacity> : null}
+ <Image source={pay24} style={{height: 50, width:70, marginTop: 30, paddingTop:1,marginRight:10, marginBottom:5 , marginLeft:95}} resizeMode={'contain'}/>
+ <Text style={{color:colors.white, alignItems:'center', justifyContent:'center', marginTop:45, marginBottom:5 }}> susținut de </Text>
+ <Image source={bt} style={{height: 30, width:40, marginTop: 40, paddingTop:5,marginLeft:3,  marginBottom:5}} resizeMode={'contain'}/>
+ </View>
+  : null }
+<Stack.Navigator screenOptions={({ route, navigation }) => ({
     headerShown: false,
     gestureEnabled: false,
     cardShadowEnabled: false,
     animationEnabled: false
   })}>
+      <Stack.Screen name="Login" component={Login} />
       <Stack.Screen name="Home" component={HomeTabs} />
       <Stack.Screen name="TransportPublic" component={TransportPublic} />
       <Stack.Screen name="PortofelQR" component={PortofelQR} />
+      <Stack.Screen name="AutomateCafea" component={AutomateCafea} />
+      <Stack.Screen name="Divertisment" component={Divertisment} />
+      <Stack.Screen name="Taxi" component={Taxi} />
+      <Stack.Screen name="Parcare" component={Parcare} />
   </Stack.Navigator>
 
   </NavigationContainer>
   </SafeAreaProvider>
   );
   }
-// {() => (
-//   <HomeStack.Navigator>
-//     <HomeStack.Screen name="Home" component={AcasaScreen}  options={{ title:'', headerStyle: {backgroundColor:'#000000'}, headerShown: false,
-//     }}
-//   />
-//     <HomeStack.Screen name="TransportPublic" component={TransportPublic} />
-//     <HomeStack.Screen name="Portofel" component={PortofelScreen} />
-//     <HomeStack.Screen name="PortofelAbonament" component={PortofelAbonamentScreen} />
-//   </HomeStack.Navigator>
-// )}
 
-
-//
-// const styles = StyleSheet.create({
-//   container: {
-//     flex:1,
-//     backgroundColor:'#1D336E',
-//     justifyContent:"center",
-//   },
-//   tabs: {
-//     flexDirection:'row',
-//     alignItems:'center',
-//     backgroundColor:'cyan',
-//   }
-// });
+  const styles = StyleSheet.create({
+forward:{
+  flex:1,
+  position:'absolute',
+  marginLeft:320,
+  height: 15,
+  width:9
+}
+});

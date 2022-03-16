@@ -32,19 +32,19 @@ return (
   <Image source={forward} style={styles.forward}/>
 </TouchableOpacity>
 
-<TouchableOpacity style={styles.button} onPress={()=>{alert("Branza !")}}>
+<TouchableOpacity style={styles.button} onPress={()=>{navigation.navigate('AutomateCafea')}}>
   <Image source={infocafe} style={styles.image}/>
   <Text style={styles.text} >Automate cafea/snack</Text>
   <Image source={forward} style={styles.forward}/>
 </TouchableOpacity>
 
-<TouchableOpacity style={styles.button} onPress={()=>{alert("Branza !")}}>
+<TouchableOpacity style={styles.button} onPress={()=>{navigation.navigate('Divertisment')}}>
   <Image source={infohappy} style={styles.image}/>
   <Text style={styles.text} >Divertisment</Text>
   <Image source={forward} style={styles.forward}/>
 </TouchableOpacity>
 
-<TouchableOpacity style={styles.button} onPress={()=>{alert("Branza !")}}>
+<TouchableOpacity style={styles.button} onPress={()=>{navigation.navigate('Taxi')}}>
   <Image source={infotaxi} style={styles.image}/>
   <Text style={styles.text} >Taxi</Text>
   <Image source={forward} style={styles.forward}/>
@@ -92,12 +92,10 @@ forward:{
   marginLeft:375,
   height: 15,
   width:11
-  // marginLeft:20
 },
 incaracareElectronicaIconVodafone:{
   flex:1,
   justifyContent:'flex-end',
-  // position:'absolute',
   marginRight:25,
   height: 35,
   width:35,
@@ -112,7 +110,6 @@ incaracareElectronicaIconTelekom:{
   incaracareElectronicaIconOrange:{
     flex:1,
     justifyContent:'flex-end',
-    // position:'absolute',
     marginLeft:40,
     marginRight:1,
     height: 35,
@@ -131,7 +128,6 @@ incaracareElectronicaIconTelekom:{
     marginLeft:5,
     marginTop:20,
     marginBottom:10
-    // backgroundColor:colors.yelllow,
   },
   scanare:{
     padding:180,
@@ -150,8 +146,6 @@ incaracareElectronicaIconTelekom:{
 
   },
   textQR:{
-    // marginLeft:10,
-    // marginRight:40,
     flex:1,
     position:'absolute',
     marginLeft:100,
@@ -184,14 +178,10 @@ incaracareElectronicaIconTelekom:{
     width:380,
     borderBottomWidth:1,
     borderBottomColor:colors.bargrey,
-    // borderBottomLength:50,
-    // padding:10,
-    // marginBottom: 30
   },
   commingsoonImage:{
     flex:1,
     position:'absolute',
-    // color:colors.gray,
     marginLeft:255,
     height: 30,
     width:100

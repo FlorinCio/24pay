@@ -1,26 +1,14 @@
-import React from 'react'
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Button, Pressable, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, Button } from 'react-native';
 import { colors } from '../Themes/Colors';
 
-function TransportPublic({ navigation }) {
-return (
-  <View style={styles.root}>
-      <View style={[styles.container, { backgroundColor: '#e1e4e8' }]}>
-        <View
-          style={[
-            styles.item,
-            { backgroundColor: '#6638f0', position: 'absolute', top: -190, left: -32, zIndex: 100 },
-          ]}
-        />
-        <View style={[styles.item, { backgroundColor: '#5cc9f5' }]} />
-        <View style={[styles.item, { backgroundColor: '#4af2a1', marginTop: -16 }]} />
-      </View>
+function TransportPublic() {
+    return (
+    <View style={{alignItems:'center', paddingTop:15, flex:1,backgroundColor: colors.darkgray, fontSize: 14}}>
+    <Text style={{color: colors.yellow}}>Transport Public</Text>
     </View>
-
-)
-}
-export default TransportPublic
+    )
+  }
+  export default TransportPublic
 
 const styles = StyleSheet.create({
   root: {

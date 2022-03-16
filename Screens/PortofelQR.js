@@ -4,7 +4,7 @@ import { StyleSheet, Text, View, Button, TouchableOpacity, Image, RefreshControl
 import { colors } from '../Themes/Colors';
 import QRCode from "react-qr-code";
 import CountDown from 'react-native-countdown-component';
-
+import Timer from './countdown.js'
 
 
 function PortofelQR() {
@@ -32,7 +32,7 @@ function PortofelQR() {
       <QRCode value="@C3ef26879-b704-4438-b467-85180156d778" size='350' bgColor={colors.whitetext} level='H' style={styles.qr} fgColor={colors.black}/>
     </View>
     <View style={styles.underQR}>
-      <Text style={styles.textunderQR}>Cod control valabil:
+      <Text style={styles.textunderQR}>Cod control valabil:<Timer />
         <CountDown
         until={time}
         onFinish={reset}
