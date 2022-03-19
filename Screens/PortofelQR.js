@@ -4,15 +4,26 @@ import { StyleSheet, Text, View, Button, TouchableOpacity, Image, RefreshControl
 import { colors } from '../Themes/Colors';
 import QRCode from "react-qr-code";
 import CountDown from 'react-native-countdown-component';
-import Timer from './countdown.js'
+import Countdown25 from './countdown.js'
+var timex = 6
 
+
+// var arr = [25,24,23,22,21,20,19,18,17,16,15,14,13,12,11,10,9,8,7,6,5,4,3,2,1,0,25,24,23,22,21,20,19,18,17,16,15,14,13,12,11,10,9,8,7,6,5,4,3,2,1,0];
+var arr = [6,5,4,3,2,1,0];
+let times = 25
+// setInterval(function(){
+//     times = arr[index++ % arr.length];
+// }, 1000)
 
 function PortofelQR() {
-  const [time, setTime] = useState(25);
-  const reset = () => {
-    setTime(25);
-  }
+
+
+
+
   return (
+
+
+
   <View style={{ flex:1,backgroundColor: colors.darkgray}}>
       <View style={{borderBottomWidth:1, borderBottomColor:colors.whitetext}}>
       </View>
@@ -29,24 +40,16 @@ function PortofelQR() {
     <Text style={{flex:1, position:'absolute', marginLeft:5, color:colors.scanYellow, marginTop:95}}>Pret       12.00 lei</Text>
 
     <View style={styles.qrview}>
-      <QRCode value="@C3ef26879-b704-4438-b467-85180156d778" size='350' bgColor={colors.whitetext} level='H' style={styles.qr} fgColor={colors.black}/>
+      <QRCode value="123888888888888888888888888885" size='360' bgColor={colors.whitetext} level='H' style={styles.qr} fgColor={colors.black}/>
     </View>
     <View style={styles.underQR}>
-      <Text style={styles.textunderQR}>Cod control valabil:<Timer />
-        <CountDown
-        until={time}
-        onFinish={reset}
-        digitStyle={{backgroundColor: 'transparent',  flexDirection:'row', marginRight:-9, width:25 ,height:30}}
-        digitTxtStyle={{color: colors.textgray, marginTop:18, marginRight:9}}
-        timeToShow={['S']}
-        timeLabels={{s:''}}
-        size={12}
-        /> seconds</Text>
+      <Text style={styles.textunderQR}>Cod control valabil: <Countdown25/>  seconds</Text>
       <Text style={styles.textunderQR}>Ticked valid till - zile: 29 , ore:23 , min:16 , sec:
         <CountDown
-        until={15}
+        id={Math.random()}
+        until={25}
         digitStyle={{backgroundColor: 'transparent',  flexDirection:'row', marginRight:-9, width:25 ,height:30}}
-        digitTxtStyle={{color: colors.textgray, marginTop:18, marginRight:9}}
+        digitTxtStyle={{color: colors.scanYellow, marginTop:18, marginRight:9}}
         timeToShow={['S']}
         timeLabels={{s:''}}
         size={12}

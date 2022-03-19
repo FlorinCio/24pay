@@ -16,7 +16,7 @@ export default function Login({ navigation }) {
   </View>
   <View style={{marginLeft: 30}}>
   <Text style={{color:colors.white, marginTop:45, marginBottom:5, fontSize: 15 }}>Introdu codul PIN:</Text>
-  <TextInput  secureTextEntry={true} maxLength={4} tintColor={colors.red} keyboardType="numeric" style={{ fontSize:20, paddingLeft:20, marginRight: 30, borderBottomWidth: 2, borderBottomColor: colors.white, color: colors.gray }} selectionColor={colors.whitetext}
+  <TextInput  secureTextEntry={true} maxLength={4} tintColor={colors.red} keyboardType="numeric" style={{ fontSize:20, paddingLeft:20, marginRight: 30, borderBottomWidth: 2, borderBottomColor: colors.white, color: colors.gray }} selectionColor={colors.yellow}
    placeholder='PIN24pay' placeholderTextColor={colors.gray} caretColor={colors.red}/>
    <Image source={eye} style={{ flex:1, position:'absolute', marginLeft:260,marginTop:65, height: 20, width:32}}/>
    <Text style={{color: colors.yellow, fontStyle: 'italic', textDecorationLine: 'underline', fontSize:15, marginTop:15}}>Am uitat PIN24pay</Text>
