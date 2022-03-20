@@ -83,8 +83,8 @@ function PortofelQR() {
         <CountDown
         until={1080000}
         onFinish={() => alert('Finished')}
-        digitStyle={{backgroundColor: 'transparent',  flexDirection:'row', marginRight:-9, width:25 ,height:30}}
-        digitTxtStyle={{color: colors.scanYellow, marginTop:18, marginRight:-520}}
+        digitStyle={{backgroundColor: 'transparent',  flexDirection:'row', marginRight:-7, width:25 ,height:30}}
+        digitTxtStyle={{color: colors.scanYellow ,marginTop:18, marginRight:7}}
         timeToShow={['S']}
         timeLabels={{s:''}}
         size={12}

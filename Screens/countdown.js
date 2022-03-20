@@ -16,9 +16,9 @@ class Countdown25 extends Component {
     }, 1000);
   }
 
-// componentWillUnmount() {
-//     clearInterval(this.timeout);
-//   }
+componentWillUnmount() {
+    clearInterval(this.timeout);
+  }
 
   render() {
     let textThatChanges = textArray[this.state.textIdx % textArray.length];
