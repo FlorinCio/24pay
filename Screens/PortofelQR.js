@@ -40,20 +40,56 @@ function PortofelQR() {
     <Text style={{flex:1, position:'absolute', marginLeft:5, color:colors.scanYellow, marginTop:95}}>Pret       12.00 lei</Text>
 
     <View style={styles.qrview}>
-      <QRCode value="123888888888888888888888888885" size='360' bgColor={colors.whitetext} level='H' style={styles.qr} fgColor={colors.black}/>
+      <QRCode value="123888888888888888888888888885" size={350} bgColor={colors.whitetext} level='H' style={styles.qr} fgColor={colors.black}/>
     </View>
     <View style={styles.underQR}>
       <Text style={styles.textunderQR}>Cod control valabil: <Countdown25/>  seconds</Text>
-      <Text style={styles.textunderQR}>Ticked valid till - zile: 29 , ore:23 , min:16 , sec:
+      <Text style={styles.textunderQR}>Ticked valid till - zile:
+      <CountDown
+      until={1080000}
+      onFinish={() => alert('Finished')}
+      digitStyle={{ backgroundColor: 'transparent', marginRight:-5,width:25 ,height:30}}
+      digitTxtStyle={{color: colors.scanYellow, marginTop:18, marginRight:5}}
+      timeToShow={['D']}
+      timeLabels={{d: '' }}
+      size={12}
+      />
+
+      <Text>, ore:</Text>
+
+      <CountDown
+      until={1080000}
+      onFinish={() => alert('Finished')}
+      digitStyle={{backgroundColor: 'transparent',  flexDirection:'row', marginRight:-7, width:25 ,height:30}}
+      digitTxtStyle={{color: colors.scanYellow ,marginTop:18, marginRight:7}}
+      timeToShow={['H']}
+      timeLabels={{m:''}}
+      size={12}
+      />
+
+      <Text>, min:</Text>
+
         <CountDown
-        id={Math.random()}
-        until={25}
+        until={1080000}
+        onFinish={() => alert('Finished')}
         digitStyle={{backgroundColor: 'transparent',  flexDirection:'row', marginRight:-9, width:25 ,height:30}}
         digitTxtStyle={{color: colors.scanYellow, marginTop:18, marginRight:9}}
+        timeToShow={['M']}
+        timeLabels={{m:''}}
+        size={12}
+        />
+
+        <Text>, sec:</Text>
+        <CountDown
+        until={1080000}
+        onFinish={() => alert('Finished')}
+        digitStyle={{backgroundColor: 'transparent',  flexDirection:'row', marginRight:-9, width:25 ,height:30}}
+        digitTxtStyle={{color: colors.scanYellow, marginTop:18, marginRight:-520}}
         timeToShow={['S']}
         timeLabels={{s:''}}
         size={12}
-        /></Text>
+        />
+    </Text>
     </View>
 </View>
   )
@@ -77,7 +113,7 @@ const styles = StyleSheet.create({
     justifyContent:'center'
   },
   qrview:{
-    height: 410,
+    height: 400,
     paddingLeft:30,
     paddingTop:30,
     color:colors.scanYellow,
@@ -85,7 +121,7 @@ const styles = StyleSheet.create({
     backgroundColor:colors.whitetext
   },
   qr:{
-    marginLeft:10,
+    // marginLeft:10,
     color:colors.textgray,
 
   },underQR:{
