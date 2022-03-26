@@ -8,6 +8,7 @@ import { colors } from '../Themes/Colors';
 import forward from '../Images/drawable-xxhdpi/forward_yellow_arrow.png';
 import Tabel from './tabela.js';
 import CountDown from 'react-native-countdown-component';
+import Countdown1h from './countdown/1h.js'
 
 function Portofel({ navigation }) {
 
@@ -17,27 +18,7 @@ function Portofel({ navigation }) {
 
   const abonament2 = <TouchableOpacity style={{marginLeft: -10, marginTop: -5}} onPress={()=>navigation.navigate('PortofelQR', { fromScreen: 'Portofel' })}>
       <Text style={styles.text}>
-        Studenti 30 zile zona 1 - rămas
-        <CountDown
-        until={1080000}
-        onFinish={() => alert('Finished')}
-        digitStyle={{ backgroundColor: 'transparent', marginRight:-5,width:25 ,height:30}}
-        digitTxtStyle={{color: colors.textgray, marginTop:18, marginRight:5}}
-        timeToShow={['D']}
-        timeLabels={{d: '' }}
-        size={12}
-        />
-        <Text>d</Text>
-        <CountDown
-        until={1080000}
-        onFinish={() => alert('Finished')}
-        digitStyle={{backgroundColor: 'transparent',  flexDirection:'row', marginRight:-7, width:25 ,height:30}}
-        digitTxtStyle={{color: colors.textgray ,marginTop:18, marginRight:7}}
-        timeToShow={['H']}
-        timeLabels={{m:''}}
-        size={12}
-        />
-        <Text>h</Text>
+               O zona - rămas 1 h
         <CountDown
         until={1080000}
         onFinish={() => alert('Finished')}
@@ -131,6 +112,7 @@ downarrow:{
 text:{
   marginTop:10,
   marginTop:-20,
+  marginLeft:11,
   // marginBottom:10,
   color:colors.textgray,
   fontSize:13.7,

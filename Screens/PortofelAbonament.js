@@ -16,7 +16,7 @@ function Portofel({ navigation }) {
 
   const abonament2 = <TouchableOpacity style={{ backgroundColor: colors.darkgray }}onPress={()=>{navigation.navigate("PortofelScreen")}}>
       <Text style={styles.text}>
-        Studenti 30 zile zona 1 - rămas
+           O zona - rămas 1 h
         <CountDown
         until={180}
         onFinish={() => alert('Finished')}
@@ -133,6 +133,7 @@ downarrow:{
 text:{
   marginTop:10,
   marginTop:-20,
+  marginLeft:10,
   // marginBottom:10,
   color:colors.textgray,
   fontSize:13.7,

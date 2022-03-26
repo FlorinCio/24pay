@@ -12,14 +12,14 @@ export default class Tabel extends Component {
 
     const abonamentBtn = (value) => (
             <View>
-              <Text style={{color:colors.tabelorange, textAlign:'center',fontSize:18,fontFamily: 'OpenSansCondBold'}}>Abonament STUDENT
-              <Text style={{color:colors.tabeltext }}>- 30 zile</Text></Text>
+              <Text style={{color:colors.whitetext, textAlign:'center',fontSize:18,fontFamily: 'OpenSansCondBold'}}>Bilet 1 zonă
+              </Text>
             </View>
         );
 
   const elementButton0 = (value) => (
           <View >
-            <Text style={{color:colors.tabelorange, textAlign:'center', fontSize:18, marginTop:-5, fontFamily: 'LatoBlack'}}>PREȚ REDUS
+            <Text style={{color:colors.whitetext, textAlign:'center', fontSize:18, marginTop:-5, fontFamily: 'LatoBlack'}}>Municipiul IAȘI
             </Text>
           </View>
       );
@@ -27,8 +27,8 @@ export default class Tabel extends Component {
     const elementButton1 = (value) => (
         <View >
           <Text style={{textAlign:'center' , marginTop:-10}}>
-            <Text style={{color:colors.tabelorange, fontSize:45,fontFamily:'LatoBlack'}}>12</Text>
-            <Text style={{color:colors.tabelorange, fontSize:30,fontFamily: 'bahnschrift'}}> Lei</Text>
+            <Text style={{color:colors.whitetext, fontSize:45,fontFamily:'LatoBlack'}}>2,5</Text>
+            <Text style={{color:colors.whitetext, fontSize:30,fontFamily: 'bahnschrift'}}> Lei</Text>
           </Text>
           <Text style={{color:colors.tabeltext, textAlign:'center', marginTop:-10}}>TVA inclus</Text>
         </View>
@@ -36,7 +36,7 @@ export default class Tabel extends Component {
 
     const elementButton2 = (value) => (
         <View style={{paddingBottom:2,paddingTop:2}}>
-            <Text style={{color:colors.tabeltext, textAlign:'center'}}>Valabilitate: 30 zile de la cumpărare</Text>
+            <Text style={{color:colors.tabeltext, textAlign:'center'}}>Valabilitate: 120 minute de la cumpărare</Text>
         </View>
 
     );
@@ -57,7 +57,7 @@ export default class Tabel extends Component {
       <View style={styles.container}>
 
         <View style={styles.container2}>
-        <Table borderStyle={{borderWidth: 3, borderColor: colors.tabelorange}}>
+        <Table borderStyle={{borderWidth: 3, borderColor: colors.whitetext}}>
           <Row data={state.tableHead} style={styles.head} textStyle={styles.text}/>
           <Rows data={state.tableData} style={styles.head2} textStyle={styles.text}/>
         </Table>
@@ -106,7 +106,7 @@ const styles = StyleSheet.create({
    },
   text: {
     margin: 6,
-     color:colors.tabelorange
+     color:colors.whitetext
    },
   lineStyle:{
     // flex:1,
