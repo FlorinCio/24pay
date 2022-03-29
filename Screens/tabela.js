@@ -1,6 +1,5 @@
 import React, { Component }  from 'react'
 import { StyleSheet, Text, View, Image } from 'react-native';
-
 import forward from '../Images/drawable-xxhdpi/forward_yellow_arrow.png';
 import { Table, Cell, Row, Rows } from 'react-native-table-component';
 import { colors } from '../Themes/Colors';
@@ -12,14 +11,14 @@ export default class Tabel extends Component {
 
     const abonamentBtn = (value) => (
             <View>
-              <Text style={{color:colors.whitetext, textAlign:'center',fontSize:18,fontFamily: 'OpenSansCondBold'}}>Bilet 1 zonă
+              <Text style={{color:colors.whitetext, textAlign:'center',fontSize:18,fontFamily: 'OpenSansCondBold'}}>Abonament 1 zi
               </Text>
             </View>
         );
 
   const elementButton0 = (value) => (
           <View >
-            <Text style={{color:colors.whitetext, textAlign:'center', fontSize:18, marginTop:-5, fontFamily: 'LatoBlack'}}>Municipiul IAȘI
+            <Text style={{color:colors.whitetext, textAlign:'center', fontSize:16, marginTop:-5, fontFamily: 'LatoBlack'}}>Municipiul IAȘI și zonele lui limitrofe
             </Text>
           </View>
       );
@@ -27,7 +26,7 @@ export default class Tabel extends Component {
     const elementButton1 = (value) => (
         <View >
           <Text style={{textAlign:'center' , marginTop:-10}}>
-            <Text style={{color:colors.whitetext, fontSize:45,fontFamily:'LatoBlack'}}>2,5</Text>
+            <Text style={{color:colors.whitetext, fontSize:45,fontFamily:'LatoBlack'}}>10</Text>
             <Text style={{color:colors.whitetext, fontSize:30,fontFamily: 'bahnschrift'}}> Lei</Text>
           </Text>
           <Text style={{color:colors.tabeltext, textAlign:'center', marginTop:-10}}>TVA inclus</Text>
@@ -36,7 +35,7 @@ export default class Tabel extends Component {
 
     const elementButton2 = (value) => (
         <View style={{paddingBottom:2,paddingTop:2}}>
-            <Text style={{color:colors.tabeltext, textAlign:'center'}}>Valabilitate: 120 minute de la cumpărare</Text>
+            <Text style={{color:colors.tabeltext, textAlign:'center'}}>Valabilitate: 24 ore de la cumpărare</Text>
         </View>
 
     );

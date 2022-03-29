@@ -7,9 +7,9 @@ const textArray = [59,58,56,55,54,53,52,51,50,49,48,47,46,45,44,43,42,41,40,39,
 
 
 class Countdown60 extends Component {
-  constructor() {
+  constructor(seconds) {
     super();
-    this.state = { textIdx: 0 };
+    this.state = { textIdx: textArray.indexOf(seconds['seconds']) };
   }
 
   componentDidMount() {

@@ -9,6 +9,7 @@ import forward from '../Images/drawable-xxhdpi/forward_yellow_arrow.png';
 import Tabel from './tabela.js';
 import CountDown from 'react-native-countdown-component';
 import Countdown1h from './countdown/1h.js'
+import Countdown24h from './countdown/24h.js'
 
 function Portofel({ navigation }) {
 
@@ -19,6 +20,7 @@ function Portofel({ navigation }) {
   const abonament2 = <TouchableOpacity style={{marginLeft: -10, marginTop: -5}} onPress={()=>navigation.navigate('PortofelQR', { fromScreen: 'Portofel' })}>
       <Text style={styles.text}>
                O zona - rămas 1 h
+               <Countdown24h />
         <CountDown
         until={1080000}
         onFinish={() => alert('Finished')}
