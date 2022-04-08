@@ -39,7 +39,6 @@ class QRcode1 extends Component{
   render(){
 
 let textThatChanges = textArray[this.state.textIdx % textArray.length];
-console.log(textThatChanges);
 
     return (
 <QRCode value={textThatChanges} size={350} bgColor={colors.whitetext} level='H' style={styles.qr} fgColor={colors.black}/>

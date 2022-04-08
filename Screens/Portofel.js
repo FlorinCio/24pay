@@ -11,27 +11,50 @@ import CountDown from 'react-native-countdown-component';
 import Countdown1h from './countdown/1h.js'
 import Countdown24h from './countdown/24h.js'
 
+function addZeroToDate(date) {
+  if (date < 10) {
+    date = '0' + date;
+  }
+  return date;
+}
+function getTimeUntil(deadline){
+  const time = new Date(deadline).getTime() - new Date().getTime();
+  const seconds = Math.floor((time/1000) % 60);
+  const minutes = Math.floor((time/1000/60) % 60);
+  const hours = Math.floor(time/(1000*60*60) % 24);
+  const days = Math.floor(time/(1000*60*60*24));
+
+return {days: days, hours: hours, minutes: minutes, seconds: seconds};
+}
+var currentdate = new Date();
+currentdate.setHours(8);
+currentdate.setMinutes(27);
+currentdate.setSeconds(5);
+currentdate.setMilliseconds(0);
+var currentDay = addZeroToDate(currentdate.getDate());
+var currentMonth = addZeroToDate(currentdate.getMonth()+1);
+var currentHours = addZeroToDate(currentdate.getHours());
+var currentMinutes = addZeroToDate(currentdate.getMinutes());
+var currentSeconds = addZeroToDate(currentdate.getSeconds());
+var currentMilliseconds = addZeroToDate(currentdate.getMilliseconds());
+var datetime = currentDay + "." + currentMonth + "."
+              + currentdate.getFullYear() + "   "
+              + currentHours + ":"
+              + currentMinutes + ":"
+              + currentSeconds;
+let timeUntilTomorrow = getTimeUntil(currentdate.setDate(currentDay + 1));
+
 function Portofel({ navigation }) {
 
 // const start = Date.now()
 // let date= start+25200000-start
 // console.log(start-start+100000 )
 
-  const abonament2 = <TouchableOpacity style={{marginLeft: -10, marginTop: -5}} onPress={()=>navigation.navigate('PortofelQR', { fromScreen: 'Portofel' })}>
+  const abonament2 =
+  <TouchableOpacity style={{marginLeft: -10, marginTop: -5}} onPress={()=>navigation.navigate('PortofelQR', { fromScreen: 'Portofel' })}>
       <Text style={styles.text}>
-               O zona - rămas 1 h
-               <Countdown24h />
-        <CountDown
-        until={1080000}
-        onFinish={() => alert('Finished')}
-        digitStyle={{backgroundColor: 'transparent',  flexDirection:'row', marginRight:-9, width:25 ,height:30}}
-        digitTxtStyle={{color: colors.textgray, marginTop:18, marginRight:9}}
-        timeToShow={['M']}
-        timeLabels={{s:''}}
-        size={12}
-        />
-        <Text>min</Text>
-        </Text>
+               O zona - rămas 0 d {timeUntilTomorrow['hours']} h {timeUntilTomorrow['minutes']} min
+      </Text>
 
 
   </TouchableOpacity>
@@ -113,10 +136,8 @@ downarrow:{
 },
 text:{
   marginTop:10,
-  marginTop:-20,
   marginLeft:11,
-  // marginBottom:10,
-  color:colors.textgray,
+  color:colors.whitetext,
   fontSize:13.7,
   fontFamily: 'bahnschrift'
 },

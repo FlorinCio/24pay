@@ -42,6 +42,7 @@ var datetime = currentDay + "." + currentMonth + "."
               + currentMinutes + ":"
               + currentSeconds;
 let timeUntilTomorrow = getTimeUntil(currentdate.setDate(currentDay + 1));
+
 function PortofelQR() {
   return (
   <View style={{ flex:1,backgroundColor: colors.darkgray}}>

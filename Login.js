@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { StyleSheet, View, Text, Image, TextInput, TouchableOpacity } from 'react-native';
 import { colors } from './Themes/Colors';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
@@ -6,6 +6,8 @@ import { StatusBar } from 'expo-status-bar';
 import pay24 from './Images/drawable-xxhdpi/toolbar_logo.png';
 import eye from './Images/drawable-xhdpi/eye_icon.png';
 import amprenta24p from './Images/drawable-xxhdpi/amprenta24p.png';
+
+
 
 export default function Login({ navigation }) {
   return (
@@ -23,10 +25,11 @@ export default function Login({ navigation }) {
   </View>
 
     <View style={{alignItems:'center', justifyContent:'center'}}>
+
       <Image source={amprenta24p} style={{height: 60, width:120, marginTop:50}} resizeMode={'contain'}/>
     </View>
     <View style={{alignItems:'center', justifyContent:'center'}}>
-      <Text style={{color: colors.yellow, fontSize:15, marginTop:85}}>Contact: 0749568911</Text>
+      <Text style={{color: colors.yellow, fontSize:15, marginTop:85}}>Contact: 0721 10 24 24</Text>
      </View>
      <TouchableOpacity style={{backgroundColor: colors.yellow, borderRadius:7, fontSize:15,  marginRight:30, marginLeft:30, marginTop:20, height:50, alignItems:'center', justifyContent:'center'}}
      onPress={()=>{navigation.navigate('Home')}}>

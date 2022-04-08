@@ -1,14 +1,14 @@
 {
   "expo": {
-    "name": "TabNavigation",
-    "slug": "TabNavigation",
+    "name": "24pay",
+    "slug": "24pay",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#000000"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
@@ -21,7 +21,7 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
+        "foregroundImage": "./assets/ic_launcher.png",
         "backgroundColor": "#80909f"
       },
       "package": "com.florinciobanu940.TabNavigation"
