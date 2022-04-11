@@ -161,7 +161,6 @@ const styles = StyleSheet.create({
     flex:1,
     position:'absolute',
     marginLeft:280,
-    color:colors.textgray,
     height: 47,
     width:75,
   },
