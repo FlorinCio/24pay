@@ -19,6 +19,7 @@ import MesajeScreen from './Screens/Mesaje';
 import IstoricScreen from './Screens/Istoric';
 import EcranSetariScreen from './Screens/EcranSetari';
 import TransportPublic from './Screens/TransportPublic';
+import Incarcare from './Screens/Incarcare';
 import { navigationRef } from './RootNavigation';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
@@ -198,6 +199,7 @@ return (
       <Stack.Screen name="AutomateCafea" component={AutomateCafea} />
       <Stack.Screen name="Divertisment" component={Divertisment} />
       <Stack.Screen name="Taxi" component={Taxi} />
+      <Stack.Screen name="Incarcare" component={Incarcare} />
       <Stack.Screen name="Parcare" component={Parcare} />
   </Stack.Navigator>
 

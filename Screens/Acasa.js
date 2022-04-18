@@ -50,7 +50,7 @@ return (
   <Image source={forward} style={styles.forward}/>
 </TouchableOpacity>
 
-<TouchableOpacity style={styles.button} onPress={()=>{alert("Branza !")}}>
+<TouchableOpacity style={styles.button} onPress={()=>{navigation.navigate('Incarcare')}}>
   <Image source={infocartela} style={styles.image}/>
   <Text style={styles.text} >Încarcare electronică </Text>
   <Image source={orange} style={styles.incaracareElectronicaIconOrange} resizeMode={'contain'}/>
