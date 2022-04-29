@@ -141,6 +141,7 @@ function HomeTabs() {
 }}
   />
     <HomeStack.Screen name="TransportPublic" component={TransportPublic}  options={{ title:'', headerStyle: {backgroundColor:'#000000'}, headerShown: false, zIndex: 1}} />
+    <HomeStack.Screen name="Incarcare" component={Incarcare}  options={{ title:'', headerStyle: {backgroundColor:'#000000'}, headerShown: false, zIndex: 1}} />
   </HomeStack.Navigator>
 )}
 </Tab.Screen>

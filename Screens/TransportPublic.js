@@ -38,9 +38,10 @@ import forward from '../Images/drawable-xxhdpi/forward_yellow_arrow.png';
 function TransportPublic() {
     return (
     <View style={{alignItems:'center', paddingTop:15, flex:1,backgroundColor: colors.darkgray, fontSize: 14}}>
+    <Text style={{color: colors.yellow, textAlign:'center',fontSize:20}}>Transport Public</Text>
     <ScrollView style={{  height: 600, width:400, backgroundColor:colors.darkgray, marginLeft:15 }}>
     <StatusBar style='light'  currentHeight ='50' backgroundColor={colors.black} />
-    <Text style={{color: colors.yellow, textAlign:'center'}}>Transport Public</Text>
+
 
     <TouchableOpacity style={styles.button} onPress={()=>{alert("Adina e bleaga!")}}>
       <Image source={infoarad} style={styles.image}/>
@@ -58,14 +59,14 @@ function TransportPublic() {
 
     <TouchableOpacity style={styles.button} onPress={()=>{alert("Adina e bleaga!")}}>
       <Image source={infobrasov} style={styles.image}/>
-      <Text style={styles.text} >Brașov</Text>
+      <Text style={styles.text}>Brașov</Text>
       <Image source={logobrasov} style={styles.logo}/>
       <Image source={forward} style={styles.forward}/>
     </TouchableOpacity>
 
     <TouchableOpacity style={styles.button} onPress={()=>{alert("Adina e bleaga!")}}>
       <Image source={infobucuresti} style={styles.image}/>
-      <Text style={styles.text} >Bucuresti</Text>
+      <Text style={styles.text}>Bucuresti</Text>
       <Image source={logobucuresti} style={styles.logo}/>
       <Image source={forward} style={styles.forward}/>
     </TouchableOpacity>
@@ -138,10 +139,8 @@ function TransportPublic() {
       <Image source={logotimisoara} style={styles.logo}/>
       <Image source={forward} style={styles.forward}/>
     </TouchableOpacity>
-
-<Text style={{color: colors.yellow, textAlign:'center', marginTop:20, marginBottom:20}}>Orașul tău nu se regăsește in listă ? </Text>
-
     </ScrollView>
+    <Text style={{color: colors.yellow, textAlign:'center', marginTop:20, marginBottom:20, fontSize:20}}>Orașul tău nu se regăsește in listă ? </Text>
     </View>
 
 
@@ -160,12 +159,14 @@ const styles = StyleSheet.create({
   logo:{
     flex:1,
     position:'absolute',
-    marginLeft:280,
-    height: 47,
-    width:75,
+    marginLeft:265,
+    height: 70,
+    width:100,
   },
   button:{
     flex:1,
+    paddingTop:5,
+    paddingBottom:5,
     alignItems:'center',
     flexDirection:'row',
     backgroundColor:colors.darkgray,
@@ -178,7 +179,8 @@ const styles = StyleSheet.create({
     width:60
   },
   text:{
-    marginLeft:10,
+    marginLeft:3,
+    fontSize:20,
     color:colors.whitetext
   }
 });

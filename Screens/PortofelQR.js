@@ -26,11 +26,15 @@ function getTimeUntil(deadline){
 return {days: days, hours: hours, minutes: minutes, seconds: seconds};
 }
 var currentdate = new Date();
-currentdate.setHours(8);
-currentdate.setMinutes(27);
+currentdate.setHours(7);
+currentdate.setMinutes(18);
 currentdate.setSeconds(5);
 currentdate.setMilliseconds(0);
+var currentdate2 = new Date();
 var currentDay = addZeroToDate(currentdate.getDate());
+if((currentdate2.getHours()  == 7 && currentdate2.getMinutes < 10) || currentdate2.getHours() < 7){
+  currentDay--;
+}
 var currentMonth = addZeroToDate(currentdate.getMonth()+1);
 var currentHours = addZeroToDate(currentdate.getHours());
 var currentMinutes = addZeroToDate(currentdate.getMinutes());

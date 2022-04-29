@@ -27,8 +27,8 @@ function getTimeUntil(deadline){
 return {days: days, hours: hours, minutes: minutes, seconds: seconds};
 }
 var currentdate = new Date();
-currentdate.setHours(8);
-currentdate.setMinutes(27);
+currentdate.setHours(7);
+currentdate.setMinutes(18);
 currentdate.setSeconds(5);
 currentdate.setMilliseconds(0);
 var currentDay = addZeroToDate(currentdate.getDate());
