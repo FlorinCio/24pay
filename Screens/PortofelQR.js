@@ -69,7 +69,7 @@ function PortofelQR() {
 
 
     <Text style={{flex:1, position:'absolute', marginLeft:5, color:colors.scanYellow, marginTop:95}}>Preț</Text>
-    <Text style={{flex:1, position:'absolute', marginLeft:55, color:colors.scanYellow, marginTop:95}}>10 lei</Text>
+    <Text style={{flex:1, position:'absolute', marginLeft:55, color:colors.scanYellow, marginTop:95}}>12 lei</Text>
     <View style={styles.qrview}>
     <QRcode1 />
     </View>

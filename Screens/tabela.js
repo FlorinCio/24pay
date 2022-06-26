@@ -26,7 +26,7 @@ export default class Tabel extends Component {
     const elementButton1 = (value) => (
         <View >
           <Text style={{textAlign:'center' , marginTop:-10}}>
-            <Text style={{color:colors.whitetext, fontSize:45,fontFamily:'LatoBlack'}}>10</Text>
+            <Text style={{color:colors.whitetext, fontSize:45,fontFamily:'LatoBlack'}}>12</Text>
             <Text style={{color:colors.whitetext, fontSize:30,fontFamily: 'bahnschrift'}}> Lei</Text>
           </Text>
           <Text style={{color:colors.tabeltext, textAlign:'center', marginTop:-10}}>TVA inclus</Text>
